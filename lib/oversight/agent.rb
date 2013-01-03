@@ -1,6 +1,6 @@
 require 'httparty'
 
-module Overwatch
+module Oversight
   class Dispatch
     include HTTParty
 

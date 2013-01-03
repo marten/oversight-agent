@@ -1,4 +1,0 @@
-#!/usr/bin/env ruby
-
-require 'overwatch/agent'
-Overwatch::Agent.new.run

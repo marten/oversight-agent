@@ -1,7 +1,7 @@
-require 'overwatch/agent'
+require 'oversight/agent'
 require 'support/vcr_setup'
 
-module Overwatch
+module Oversight
   describe Dispatch, vcr: true do
     let(:dispatch) { Dispatch.new("auth-key") }
 

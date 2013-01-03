@@ -1,4 +1,7 @@
 #!/usr/bin/env ruby
 
+require 'yaml'
+config = YAML.load(File.read("agent.yml"))
+
 require 'oversight/agent'
-Oversight::Agent.new.run
+Oversight::Agent.new(config).run

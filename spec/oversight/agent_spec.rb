@@ -2,20 +2,11 @@ require 'oversight/agent'
 require 'support/vcr_setup'
 
 module Oversight
-  describe Dispatch, vcr: true do
-    let(:dispatch) { Dispatch.new("auth-key") }
-
-    it 'posts to api server' do
-      dispatch.report
-    end
-  end
-  
-  describe Agent do
-    let(:dispatch) { stub }
-    let(:agent) { Agent.new(dispatch: dispatch) }
+  describe Agent, vcr: true do
+    let(:agent) { Agent.new(auth_key: "an-auth-key",
+                            node_id:  "test-node") }
 
     it 'reports to dispatch' do
-      dispatch.should_receive(:report).once
       agent.run
     end
   end

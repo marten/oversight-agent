@@ -1,6 +1,15 @@
 require 'overwatch/agent'
+require 'support/vcr_setup'
 
 module Overwatch
+  describe Dispatch, vcr: true do
+    let(:dispatch) { Dispatch.new("auth-key") }
+
+    it 'posts to api server' do
+      dispatch.report
+    end
+  end
+  
   describe Agent do
     let(:dispatch) { stub }
     let(:agent) { Agent.new(dispatch: dispatch) }
